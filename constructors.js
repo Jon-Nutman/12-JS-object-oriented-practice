@@ -50,23 +50,29 @@ function expect(target) {
 //
 // Only add code to *THIS* section!
 
-// Q1
-
-function Dog (obj) {
+function Dog (obj){
   this.status = 'normal'
-  this.owner = undefined
-
-if(obj){
-  this.color = obj.color
-  this.hungry = obj.hungry
+  if(obj){
+    this.color = obj.color
+    this.hungry = obj.hungry !== undefined ? obj.hungry : true 
+  }
+}
+function Human(obj){
+  this.cool = obj && obj.cool !== undefined ? obj.cool : false
+  if (obj && obj.cool !== undefined){
+    this.cool = obj.cool
+  }else{
+    this.cool = false
+  }
 }
 
+Human.prototype.pet = function(dog){
+  return dog.status = "happy"
 }
 
-// Dog.prototype.hungerChange = function() {
-
-//   const isHungry = 
-// }
+Human.prototype.feed = function(dog){
+  return dog.hungry = false
+}
 
 //        __
 //   ____/ /___  ____ ______
@@ -81,17 +87,10 @@ var sadie = new Dog({
 })
 
 var moonshine = new Dog({
-  status: 'normal',
   color: 'blue-red',
-  hungry: true,
 })
 
-
-
-
-var atticus = new Dog({
-
-})
+var atticus = new Dog()
 
 //     __
 //    / /_  __  ______ ___  ____ _____  _____
@@ -99,24 +98,12 @@ var atticus = new Dog({
 //  / / / / /_/ / / / / / / /_/ / / / (__  )
 // /_/ /_/\__,_/_/ /_/ /_/\__,_/_/ /_/____/
 
-function Human () {
-}
 
-Human.prototype.pet = function(dog){
-  return dog.status = "happy"
-}
+var mason = new Human()
 
-Human.prototype.feed = function(dog){
-  return dog.hungry = false
-}
-
-function Human (cool) {
-  this.cool = cool
-}
-
-var mason = new Human(false)
-
-var julia = new Human(true)
+var julia = new Human({
+  cool: true,
+})
 
 //                     __           __  __    _                             __
 //    ____ ___  ____ _/ /_____     / /_/ /_  (_)____   _      ______  _____/ /__
