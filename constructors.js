@@ -54,11 +54,11 @@ function expect(target) {
 
 function Dog (obj) {
   this.status = 'normal'
-  this.hungry = true
   this.owner = undefined
 
 if(obj){
   this.color = obj.color
+  this.hungry = obj.hungry
 }
 
 }
