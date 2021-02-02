@@ -59,11 +59,6 @@ function Dog (obj){
 }
 function Human(obj){
   this.cool = obj && obj.cool !== undefined ? obj.cool : false
-  if (obj && obj.cool !== undefined){
-    this.cool = obj.cool
-  }else{
-    this.cool = false
-  }
 }
 
 Human.prototype.pet = function(dog){
