@@ -52,16 +52,15 @@ function expect(target) {
 
 // Q1
 
-function Dog (status, color, hungry, owner) {
+function Dog (obj) {
   this.status = 'normal'
-  this.color = 'black'
   this.hungry = true
   this.owner = undefined
 
-  // if (new Dog = var sadie){
-  //   this.color = 'black'
-  //   this.hungry = 'not hungry'
-  // }
+if(obj){
+  this.color = obj.color
+}
+
 }
 
 // Dog.prototype.hungerChange = function() {
@@ -90,7 +89,9 @@ var moonshine = new Dog({
 
 
 
-var atticus = new Dog()
+var atticus = new Dog({
+
+})
 
 //     __
 //    / /_  __  ______ ___  ____ _____  _____
