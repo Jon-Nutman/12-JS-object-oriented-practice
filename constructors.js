@@ -55,10 +55,19 @@ function expect(target) {
 function Dog (status, color, hungry, owner) {
   this.status = 'normal'
   this.color = 'black'
-  this.hungry = 'true'
+  this.hungry = true
   this.owner = undefined
+
+  // if (new Dog = var sadie){
+  //   this.color = 'black'
+  //   this.hungry = 'not hungry'
+  // }
 }
 
+// Dog.prototype.hungerChange = function() {
+
+//   const isHungry = 
+// }
 
 //        __
 //   ____/ /___  ____ ______
